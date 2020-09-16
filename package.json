@@ -1,0 +1,38 @@
+{
+  "name": "pet-meeting",
+  "version": "1.0.0",
+  "description": "Backend of pet meeting.",
+  "main": "app.js",
+  "config": {
+    "port": "3000"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamFirstCapstone/Pet-Meeting-Server.git"
+  },
+  "author": {
+    "name": "Team First",
+    "email": "sonjeff@naver.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TeamFirstCapstone/Pet-Meeting-Server/issues",
+    "email": "sonjeff@naver.com"
+  },
+  "homepage": "https://github.com/TeamFirstCapstone/Pet-Meeting-Server#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.4"
+  }
+}
