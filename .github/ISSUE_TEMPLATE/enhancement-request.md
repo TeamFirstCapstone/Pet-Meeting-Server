@@ -1,19 +1,21 @@
 ---
 name: Enhancement request
 about: Suggest an item to do
-title: "[Funciton] "
+title: ""
 labels: enhancement
 assignees: carnival77
-
 ---
 
-### Actual goal of this enhancement
+### Goal of enhancement
+
 Make user to sign in with OAuth; Google and Kakao
 
 ### List of all functions
-[x] signin()
-[] signup()
-[] User
+
+- [ ] signin()
+- [ ] signup()
+- [ ] User class
 
 ### Expected due date
-**2020-09-20**
+
+> 2020-09-20
