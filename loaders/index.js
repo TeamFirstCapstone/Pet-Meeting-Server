@@ -1,12 +1,15 @@
-import expressLoader from "./express";
-import mysqlLoader from "./mysql";
+const {expressLoader} = require("./express");
+const {mysqlLoader} = require("./mysql");
 
-export default async ({ expressApp }) => {
-  // const mysqlConnection = await mysqlLoader();
-  console.log("MySQL Intialized");
+module.exports = {
+  loaders: ({ expressApp }) => {
+    // const mysqlConnection = await mysqlLoader();
+    console.log("MySQL Intialized");
 
-  await expressLoader({ app: expressApp });
-  console.log("Express Intialized");
+    expressLoader({ app: expressApp });
+    console.log("Express Intialized");
 
-  return { mysqlConnection };
-};
+    // return { mysqlConnection };
+    return { expressApp };
+  }
+}
