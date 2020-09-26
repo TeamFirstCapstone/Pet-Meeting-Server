@@ -7,7 +7,7 @@
 <body>
 	<h1>MySQL 사용자추가</h1>
 	<br>
-	<form method="post" action="/register">
+	<form method="post" action="/signup">
 		<table>
 			<tr>
 				<td><label>사용자명</label></td>
@@ -19,7 +19,11 @@
 			</tr>
 			<tr>
 				<td><label>비밀번호</label></td>
-				<td><input type="password" name="password" ></td>
+				<td><input type="text" name="password" ></td>
+			</tr>
+			<tr>
+				<td><label>phone</label></td>
+				<td><input type="text" name="phone" ></td>
 			</tr>
 		</table>
 		<input type="submit" value="전송" >
