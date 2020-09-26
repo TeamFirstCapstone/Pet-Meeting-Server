@@ -27,8 +27,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // body-parser를 이용해 application/json 파싱
 app.use(bodyParser.json())
 
-// public 폴더를 static으로 오픈
-app.use('/public', static(path.join(__dirname, './public')));
+// // public 폴더를 static으로 오픈
+// app.use('/public', static(path.join(__dirname, './public')));
  
 // cookie-parser 설정
 app.use(cookieParser());
@@ -44,30 +44,22 @@ var cors = require('cors')
 
 app.use(cors())
 
+// const indexRouter = require("./routes/index");
 const user = require("./routes/user");
+const {loaders} = require("./loaders/index");
 
-app.use("/", user); // routes에 user 외의 기능들이 추가되면 /user로 프론트와 함께 바꿀 것!
- 
-// 프로세스 종료 시에 데이터베이스 연결 해제
-process.on('SIGTERM', function () {
-  console.log("프로세스가 종료됩니다.");
-});
+// const { mysqlConnection } = loaders({ expressApp: app });
 
-app.on('close', function () {
-console.log("Express 서버 객체가 종료됩니다.");
-});
+// app.use("/", indexRouter);
+app.use("/", user); // /user로 프론트와 함께 바꿀 것!
 
-// 404 에러 페이지 처리
-var errorHandler = expressErrorHandler({
-  static: {
-    '404': './public/404.html'
-  }
- });
- 
- app.use( expressErrorHandler.httpError(404) );
- app.use( errorHandler );
+// app.listen(process.env.PORT, (err) => {
+//   if (err) console.log(err);
+//   else console.log(`Your server is ready on port ${process.env.PORT}`);
+// });
 
- // Express 서버 시작
+// Express 서버 시작
 http.createServer(app).listen(app.get('port'), function(){
   console.log('서버가 시작되었습니다. 포트 : ' + app.get('port'));
 });
+ 
