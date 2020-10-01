@@ -2,8 +2,12 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const router = express.Router()
+var mysql = require('mysql');
 
 var pool = require('../loaders/pool')
+
+// var pool_option = require('../config/pool_option')
+// var pool = mysql.createPool(pool_option)
 
 var authUser = require('../functions/authUser')
 var addUser = require('../functions/addUser')
@@ -74,14 +78,14 @@ router.route('/signup').post(function(req, res) {
     var paramPassword = req.body.password || req.query.password;
     var paramEmail = req.body.email || req.query.email;
     var paramPhone = req.body.phone || req.query.phone;
-    var paramCreated = today;
+    // var paramCreated = today;
     
     console.log('요청 파라미터 : ' + paramUsername + ', ' + paramPassword 
-    + ', ' + paramEmail + ', ' +paramPhone + ', ' + paramCreated );
+    + ', ' + paramEmail + ', ' +paramPhone );
     
     // pool 객체가 초기화된 경우, addUser 함수 호출하여 사용자 추가
     if (pool) {
-        addUser(paramUsername, paramPassword, paramEmail,paramPhone,paramCreated, function(err, addedUser) {
+        addUser(paramUsername, paramPassword, paramEmail,paramPhone, function(err, addedUser) {
             // 동일한 id로 추가하려는 경우 에러 발생 - 클라이언트로 에러 전송
             if (err) {
                 console.error('사용자 추가 중 에러 발생 : ' + err.stack);
@@ -94,14 +98,14 @@ router.route('/signup').post(function(req, res) {
                 return;
             }
             
-            // 결과 객체 있으면 성공 응답 전송
+            // // 결과 객체 있으면 성공 응답 전송
             if (addedUser) {
                 console.dir(addedUser);
 
-                console.log('inserted ' + result.affectedRows + ' rows');
+                // console.log('inserted ' + result.affectedRows + ' rows');
                 
-                var insertUsername = result.insertUsername;
-                console.log('추가한 레코드의 아이디 : ' + insertUsername);
+                // var insertUsername = result.insertUsername;
+                // console.log('추가한 레코드의 아이디 : ' + insertUsername);
                 
                 res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
                 res.write('<h2>사용자 추가 성공</h2>');

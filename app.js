@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // // public 폴더를 static으로 오픈
-// app.use('/public', static(path.join(__dirname, './public')));
+app.use('/public', static(path.join(__dirname, './public')));
  
 // cookie-parser 설정
 app.use(cookieParser());
@@ -46,7 +46,7 @@ app.use(cors())
 
 // const indexRouter = require("./routes/index");
 const user = require("./routes/user");
-const {loaders} = require("./loaders/index");
+// const {loaders} = require("./loaders/index");
 
 // const { mysqlConnection } = loaders({ expressApp: app });
 
