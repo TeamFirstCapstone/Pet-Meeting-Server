@@ -14,7 +14,7 @@ var authUser = function(username, password, callback) {
             return;
         }   
         console.log('데이터베이스 연결 스레드 아이디 : ' + conn.threadId);
-          
+        
         var columns = ['username', 'password'];
         var tablename = 'User';
  
