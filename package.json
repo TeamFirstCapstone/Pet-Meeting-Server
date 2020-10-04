@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "node app.js"
+    "start": "babel-node ./src",
+    "dev": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "errorhandler": "^1.4.3",
     "express": "^4.17.1",
     "express-error-handler": "^1.1.0",
@@ -43,7 +45,22 @@
     "serve-static": "^1.11.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
     "jest": "^26.4.2",
     "nodemon": "^2.0.4"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src/*"
+    ],
+    "ignore": [
+      ".env"
+    ],
+    "exec": "babel-node ./src"
   }
 }

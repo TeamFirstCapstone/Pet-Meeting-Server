@@ -6,8 +6,9 @@ var express = require('express')
 // Express의 미들웨어 불러오기
 var bodyParser = require('body-parser')
   , cookieParser = require('cookie-parser')
-  , static = require('serve-static')
+  , serverStatic = require('serve-static')
   , errorHandler = require('errorhandler');
+
 
 // 에러 핸들러 모듈 사용
 var expressErrorHandler = require('express-error-handler');
@@ -27,8 +28,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // body-parser를 이용해 application/json 파싱
 app.use(bodyParser.json())
 
-// // public 폴더를 static으로 오픈
-app.use('/public', static(path.join(__dirname, './public')));
+// // public 폴더를 serverStatic 오픈
+app.use('/public', serverStatic(path.join(__dirname, './public')));
  
 // cookie-parser 설정
 app.use(cookieParser());
@@ -57,9 +58,5 @@ app.use("/", user); // /user로 프론트와 함께 바꿀 것!
 //   if (err) console.log(err);
 //   else console.log(`Your server is ready on port ${process.env.PORT}`);
 // });
-
-// Express 서버 시작
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('서버가 시작되었습니다. 포트 : ' + app.get('port'));
-});
  
+export default app;
