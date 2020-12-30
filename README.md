@@ -13,7 +13,7 @@ https://github.com/TeamFirstCapstone/Pet-Meeting-Server-1/ 가 최종 레포지�
  
  # 서버와 WAS 차이 담는 이미지
  
- !(https://user-images.githubusercontent.com/46518769/103343021-5f72a780-4ace-11eb-9903-ca087f1b058b.png)
+ ![Alt text](https://user-images.githubusercontent.com/46518769/103343021-5f72a780-4ace-11eb-9903-ca087f1b058b.png)
  
  웹서버로 Nginx이용, Nginx는 WAS 아님 
  
