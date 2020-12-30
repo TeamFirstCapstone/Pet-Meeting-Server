@@ -10,10 +10,14 @@ https://github.com/TeamFirstCapstone/Pet-Meeting-Server-1/ 가 최종 레포지�
  MySQL
  Redis
  JEST(서버 클라이언트 테스트 모두 본인이 진행)
- 서버와 WAS 차이 담는 이미지
- https://user-images.githubusercontent.com/46518769/103343021-5f72a780-4ace-11eb-9903-ca087f1b058b.png
+ 
+ # 서버와 WAS 차이 담는 이미지
+ 
+ !(https://user-images.githubusercontent.com/46518769/103343021-5f72a780-4ace-11eb-9903-ca087f1b058b.png)
+ 
  웹서버로 Nginx이용, Nginx는 WAS 아님 
- 인스턴스는 Amozon elasticbeanstalk 이용
+ 
+ 인스턴스는 Amozon Elasticbeanstalk 이용
  
 # Postman API
  RESTful 원칙으로 설계
